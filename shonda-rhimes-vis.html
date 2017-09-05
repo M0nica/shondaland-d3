@@ -73,20 +73,10 @@ var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 
-// // load data
-// d3.tsv("data.tsv", function(error, data) {
-//
-//   // change string (from CSV) into number format
-//   data.forEach(function(d) {
-//     d.Year = +d.Year;
-//     d.Position = +d.Position;
-// //    console.log(d);
-//   });
 
 d3.csv("shonda_rhimes_projects.csv", function(data) {
 
   var dataset = data;
-  //var formatTime = d3.timeFormat("%Y");
 
   //Function for converting CSV values from strings to Dates and numbers
   var rowConverter = function(d) {
@@ -123,12 +113,6 @@ d3.csv("shonda_rhimes_projects.csv", function(data) {
   svg.append("g")
       .attr("class", "y axis")
       .call(yAxis)
-    // .append("text")
-    //   .attr("class", "label")
-    //   .attr("transform", "rotate(-90)")
-    //   .attr("y", 6)
-    //   .attr("dy", ".71em")
-    //   .style("text-anchor", "end")
       .text(""); // y-axis label blank
 
   // draw dots
